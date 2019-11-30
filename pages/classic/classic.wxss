@@ -1,1 +1,12 @@
 /* pages/classic/classic.wxss */
+
+.container {
+    display: flex;
+    
+}
+
+.chunk {
+    height: 100px;
+    width: 100px;
+    border: 1px solid red;
+} 
