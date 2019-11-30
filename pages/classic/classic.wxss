@@ -2,8 +2,17 @@
 
 .container {
     display: flex;
+    background: #ddd;
     /* flex-direction: column; */
-    flex-direction: column-reverse;
+    /* flex-direction: column-reverse; */
+    /* flex-direction: row; */
+    /* flex-direction: row-reverse; */
+    /* justify-content: flex-end;
+    justify-content: flex-start;
+    justify-content: space-between;
+    justify-content: space-around;
+    justify-content: space-evenly; */
+
     
 }
 
