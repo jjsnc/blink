@@ -1,8 +1,8 @@
 <!-- pages/classic/classic.wxml -->
 <view class="container">
-    <view class="chunk coclor-1"></view>
-    <view class="chunk coclor-1"></view>
-    <view class="chunk coclor-1"></view>
+    <view class="chunk coclor-1">001</view>
+    <view class="chunk coclor-1">002</view>
+    <view class="chunk coclor-1">003</view>
 </view>
 <!-- flex flexible box 弹性盒子 -->
 <!-- flex container felx item -->
