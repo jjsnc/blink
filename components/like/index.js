@@ -49,7 +49,7 @@ Component({
         count:count,
         like:!like
       })
-      // 激活
+      // 激活 小程序的自定义事件
       let behavior = this.properties.like?'like':'cancel'
       this.triggerEvent('like',{
         behavior:behavior

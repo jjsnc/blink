@@ -1,5 +1,5 @@
 <!-- pages/classic/classic.wxml -->
 <view>
-  <v-like  like="{{likeStatus}}" count="{{likeCount}}"/>
-    <v-movie hidden="{{classic.type!=100}}" img="{{classic.image}}" content="{{classic.content}}" />
+  <v-like bind:like="onLike" like="{{likeStatus}}" count="{{likeCount}}" />
+  <v-movie hidden="{{classic.type!=100}}" img="{{classic.image}}" content="{{classic.content}}" />
 </view>
