@@ -1,5 +1,5 @@
 <!-- pages/classic/classic.wxml -->
 <view>
-  这是是主页面
-  <v-like/>
+  <v-like  like="{{likeStatus}}" count="{{likeCount}}"/>
+    <v-movie hidden="{{classic.type!=100}}" img="{{classic.image}}" content="{{classic.content}}" />
 </view>

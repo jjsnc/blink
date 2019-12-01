@@ -1,4 +1,7 @@
-// pages/classic/classic.js
+import {
+  ClassicModel
+} from '../../models/classic.js'
+const classicModel = new ClassicModel()
 Page({
 
   /**
@@ -12,15 +15,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-     wx.request({
-       url: 'http://bl.7yue.pro/v1/classic/latest',
-       header:{
-         appkey:"eM6FrYXNzYd9vDIR"
-       },
-       success:(res)=> {
-         console.log(res,'res')
-       }
-     })
+    classicModel.getLatest((res) => {
+      this.setData({
+        classic: res,
+        likeCount: res.fav_nums,
+        likeStatus: res.like_status
+      })
+    })
   },
 
   /**
