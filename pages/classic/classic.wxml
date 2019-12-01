@@ -1,1 +1,5 @@
 <!-- pages/classic/classic.wxml -->
+<view>
+  这是是主页面
+  <v-like/>
+</view>

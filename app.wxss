@@ -1,0 +1,8 @@
+
+page{
+    font-family: "PingFangSC-Thin";
+    font-size:32rpx;
+}
+/* 页面可以继承这里定义的class 组件是无法继承的 */
+
+

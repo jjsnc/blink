@@ -1,0 +1,7 @@
+<!--components/like/index.wxml-->
+
+<!-- bind事件不会阻止事件冒泡  catch事件绑定可以阻止tab事件冒泡 -->
+<view bind:tap="onLike" class="container">
+    <image src="{{like?yesSrc:noSrc}}" />
+    <text>{{count}}</text>
+</view>
