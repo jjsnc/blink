@@ -10,11 +10,16 @@ const likeModel = new LikeModel()
 
 Page({
 
+
   /**
    * 页面的初始数据
    */
   data: {
-
+    classic: null,
+    latest: true,
+    first: false,
+    likeCount: 0,
+    likeStatus: false
   },
 
   /**
@@ -31,7 +36,14 @@ Page({
   },
   onLike: function (event) {
     const behavior = event.detail.behavior
-    likeModel.like(behavior, this.data.classic.id,this.data.classic.type)
+    likeModel.like(behavior, this.data.classic.id, this.data.classic.type)
+  },
+  onNext: function (event) {
+      console.log(event)
+  },
+
+  onPrevious: function (event) {
+     console.log(event)
   },
 
   /**
