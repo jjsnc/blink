@@ -39,11 +39,21 @@ Page({
     likeModel.like(behavior, this.data.classic.id, this.data.classic.type)
   },
   onNext: function (event) {
-      console.log(event)
+    this._updateClassic('next')
   },
 
   onPrevious: function (event) {
-     console.log(event)
+    this._updateClassic('previous')
+  },
+  _updateClassic: function (nextOrPrevious) {
+    const index = this.data.classic.index
+    classicModel.getClassic(index, nextOrPrevious, (res) => {
+      this.setData({
+        classic: res,
+        latest: classicModel.isLatest(res.index),
+        first: classicModel.isFirst(res.index)
+      })
+    })
   },
 
   /**
