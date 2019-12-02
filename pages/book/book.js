@@ -1,18 +1,36 @@
 // pages/book/book.js
+import {
+  BookModel
+} from '../../models/book.js'
+
+
+const bookModel = new BookModel()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    books: [],
+    searching:false,
+    more:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-
+  async onLoad(optins) {
+    const books = await bookModel.getHotList()
+    console.log(books, 'books')
+    this.setData({
+      books
+    })
+      // .then(res => {
+      //   this.setData({
+      //     books:res
+      //   })
+      // })
+    // id
   },
 
   /**
