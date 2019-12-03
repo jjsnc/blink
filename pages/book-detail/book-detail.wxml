@@ -42,6 +42,14 @@
     </view>
 </view>
 
+<view class="post-container" hidden="{{posting}}">
+    <view bind:tap="onFakePost" class="post-fake">
+        <text>输入短评</text>
+    </view>
+    <view class="like-container">
+        <v-like bind:like="onLike" class="like" like="{{likeStatus}}" count="{{likeCount}}" />
+    </view>
+</view>
 
 <wxs module="tool">
     var highlight = function(index){
