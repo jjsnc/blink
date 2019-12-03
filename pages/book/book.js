@@ -21,16 +21,9 @@ Page({
    */
   async onLoad(optins) {
     const books = await bookModel.getHotList()
-    console.log(books, 'books')
     this.setData({
       books
     })
-      // .then(res => {
-      //   this.setData({
-      //     books:res
-      //   })
-      // })
-    // id
   },
 
   /**
