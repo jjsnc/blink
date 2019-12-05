@@ -26,6 +26,23 @@ Page({
     })
   },
 
+  onSearching(event){
+    this.setData({
+      searching:true
+    })
+  },
+
+  onCancel(event){
+    this.setData({
+      searching:false
+    }) 
+  },
+
+  onReachBottom(){
+    this.setData({
+      more:random(16)
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
