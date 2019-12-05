@@ -3,6 +3,13 @@
 import {
   KeywordModel
 } from '../../models/keyword.js'
+const bookModel = new BookModel()
+import {
+  BookModel
+} from '../../models/book.js'
+import {
+  paginationBev
+} from '../behaviors/pagination.js'
 
 const keywordModel = new KeywordModel()
 
@@ -11,6 +18,7 @@ Component({
   /**
    * 组件的属性列表
    */
+  behaviors: [paginationBev],
   properties: {
 
   },
@@ -31,9 +39,12 @@ Component({
     this.setData({
       historyWords: keywordModel.getHistory()
     })
+
+
     keywordModel.getHot().then(res => {
       this.setData({
         hotWords: res.hot
+      })
     })
   },
 
@@ -60,14 +71,23 @@ Component({
       this.setData({
         q
       })
-      // bookModel.search(0, q)
-      //   .then(res => {
-      //     this.setMoreData(res.books)
-      //     this.setTotal(res.total)
+      bookModel.search(0, q)
+        .then(res => {
+          this.setMoreData(res.books)
+          this.setTotal(res.total)
           keywordModel.addToHistory(q)
-      //     this._hideLoadingCenter()
-      //   })
+          this._hideLoadingCenter()
+        })
+    },
+    _showLoadingCenter() {
+      this.setData({
+        loadingCenter: true
+      })
+    },
+    _hideLoadingCenter() {
+      this.setData({
+        loadingCenter: false
+      })
     }
-
   }
 })
