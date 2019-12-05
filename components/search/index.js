@@ -1,4 +1,12 @@
 // components/search/index.js
+
+import {
+  KeywordModel
+} from '../../models/keyword.js'
+
+const keywordModel = new KeywordModel()
+
+
 Component({
   /**
    * 组件的属性列表
@@ -11,13 +19,24 @@ Component({
    * 组件的初始数据
    */
   data: {
-    historyWords: ["1","2"],
-    hotWords: [123,123,123],
+    historyWords: [],
+    hotWords: [],
     searching: false,
     q: '',
     loading: false,
     loadingCenter: false
   },
+
+  attached() {
+    this.setData({
+      historyWords: keywordModel.getHistory()
+    })
+    keywordModel.getHot().then(res => {
+      this.setData({
+        hotWords: res.hot
+    })
+  },
+
 
   /**
    * 组件的方法列表
@@ -37,15 +56,15 @@ Component({
       // this._showResult()
       // this._showLoadingCenter()
       // // this.initialize() 
-      // const q = event.detail.value || event.detail.text
-      // this.setData({
-      //   q
-      // })
+      const q = event.detail.value || event.detail.text
+      this.setData({
+        q
+      })
       // bookModel.search(0, q)
       //   .then(res => {
       //     this.setMoreData(res.books)
       //     this.setTotal(res.total)
-      //     keywordModel.addToHistory(q)
+          keywordModel.addToHistory(q)
       //     this._hideLoadingCenter()
       //   })
     }
