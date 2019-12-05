@@ -54,19 +54,18 @@ Component({
    */
   methods: {
     onCancel(event) {
-      // this.initialize()
+      this.initialize()
       this.triggerEvent('cancel', {}, {})
     },
     onDelete(event) {
-      // this.initialize()
-      // this._closeResult()
+      this.initialize()
+      this._closeResult()
       console.log(event, 'onDelete')
     },
     onConfirm(event) {
-      console.log(event, 'event')
-      // this._showResult()
-      // this._showLoadingCenter()
-      // // this.initialize() 
+      this._showResult()
+      this._showLoadingCenter()
+      this.initialize() 
       const q = event.detail.value || event.detail.text
       this.setData({
         q
@@ -87,6 +86,18 @@ Component({
     _hideLoadingCenter() {
       this.setData({
         loadingCenter: false
+      })
+    },
+    _showResult() {
+      this.setData({
+        searching: true
+      })
+    },
+
+    _closeResult() {
+      this.setData({
+        searching: false,
+        q: ''
       })
     }
   }
