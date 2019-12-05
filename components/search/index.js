@@ -11,8 +11,8 @@ Component({
    * 组件的初始数据
    */
   data: {
-    historyWords: [],
-    hotWords: [],
+    historyWords: ["1","2"],
+    hotWords: [123,123,123],
     searching: false,
     q: '',
     loading: false,
