@@ -24,9 +24,8 @@ Component({
    */
   methods: {
     onCancel(event) {
-      console.log(event, 'onCancel')
       // this.initialize()
-      // this.triggerEvent('cancel', {}, {})
+      this.triggerEvent('cancel', {}, {})
     },
     onDelete(event) {
       // this.initialize()
