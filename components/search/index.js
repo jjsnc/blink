@@ -60,7 +60,6 @@ Component({
     onDelete(event) {
       this.initialize()
       this._closeResult()
-      console.log(event, 'onDelete')
     },
     onConfirm(event) {
       this._showResult()
