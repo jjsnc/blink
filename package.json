@@ -1,0 +1,23 @@
+{
+  "name": "blink",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "lin-ui": "^0.6.13"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jjsnc/blink.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jjsnc/blink/issues"
+  },
+  "homepage": "https://github.com/jjsnc/blink#readme"
+}
