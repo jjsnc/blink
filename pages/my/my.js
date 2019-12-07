@@ -112,10 +112,9 @@ Page({
   },
 
   onJumpToAbout(event) {
-     console.log('跳转关于我们页面')
-    // wx.navigateTo({
-    //   url: '/pages/about/about',
-    // })
+    wx.navigateTo({
+      url: '/pages/about/about',
+    })
   },
 
   onStudy(event) {
