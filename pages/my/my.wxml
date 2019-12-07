@@ -30,5 +30,4 @@
     </view>
 
 </view>
-<button open-type="getUserInfo"  bind:getuserinfo="onGetUserInfo">授权</button>
 <!-- <image bind:tap="onStudy" class="study" src="/images/my/study.png"></image> -->
